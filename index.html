@@ -1,0 +1,746 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300&family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+    <title>The Swifties Network</title>
+</head>
+<body>
+
+    <!-- AUDIO AUTOPLAY -->
+    <audio id="bg-audio" autoplay loop>
+        <source src="Taylor Swift - Opalite (Official HD Audio).mp3" type="audio/mp3" />
+    </audio>
+
+    <!-- SPLASH SCREEN -->
+    <div id="splash">
+        <div class="splash-content">
+            <div class="splash-stars"></div>
+            <div class="splash-logo">✦</div>
+            <h1 class="splash-title">The Swifties<br><em>Network</em></h1>
+            <p class="splash-sub">A rede social oficial das swifties</p>
+            <button id="enter-btn" onclick="enterSite()">
+                <span>Entrar na Era</span>
+                <div class="btn-glow"></div>
+            </button>
+        </div>
+    </div>
+
+    <!-- CURSOR PERSONALIZADO -->
+    <div class="custom-cursor" id="cursor"></div>
+    <div class="custom-cursor-dot" id="cursor-dot"></div>
+
+    <!-- HEADER -->
+    <header id="main-header">
+        <nav id="navbar">
+            <div class="nav-logo">
+                <a href="#home">
+                    <img id="icon" src="LOGO.jpg" alt="Taylor Swift" onerror="this.style.display='none'" />
+                    <span class="logo-text">TSN</span>
+                </a>
+            </div>
+
+            <ul id="nav-links">
+                <li><a href="#home" class="nav-link active" data-tab="home">Home</a></li>
+                <li><a href="#albuns" class="nav-link" data-tab="albuns">✦ Eras</a></li>
+                <li><a href="#fotos" class="nav-link" data-tab="fotos">Galeria</a></li>
+                <li><a href="#mural" class="nav-link" data-tab="mural">Mural</a></li>
+                <li><a href="#comunidade" class="nav-link" data-tab="comunidade">Comunidade</a></li>
+            </ul>
+
+            <div class="nav-actions">
+                <button class="audio-toggle" id="audio-toggle" onclick="toggleAudio()" title="Toggle música">
+                    <span class="audio-icon">♫</span>
+                </button>
+                <div class="era-badge" id="current-era-badge">Lover Era</div>
+            </div>
+
+            <button class="hamburger" id="hamburger" onclick="toggleMobile()">
+                <span></span><span></span><span></span>
+            </button>
+        </nav>
+    </header>
+
+    <!-- MOBILE MENU -->
+    <div class="mobile-menu" id="mobile-menu">
+        <a href="#home" onclick="closeMobile()">Home</a>
+        <a href="#albuns" onclick="closeMobile()">✦ Eras</a>
+        <a href="#fotos" onclick="closeMobile()">Galeria</a>
+        <a href="#mural" onclick="closeMobile()">Mural</a>
+        <a href="#comunidade" onclick="closeMobile()">Comunidade</a>
+    </div>
+
+    <main>
+
+        <!-- ===== HOME ===== -->
+        <section id="home" class="page-section active">
+            <!-- HERO -->
+            <div class="hero">
+                <div class="hero-bg-shapes">
+                    <div class="shape shape-1"></div>
+                    <div class="shape shape-2"></div>
+                    <div class="shape shape-3"></div>
+                </div>
+                <div class="hero-content">
+                    <div class="hero-badge">✦ Welcome to the Network ✦</div>
+                    <h1 class="hero-title">
+                        The Swifties<br>
+                        <em class="hero-subtitle-italic">Network</em>
+                    </h1>
+                    <p class="hero-desc">O espaço definitivo para fãs da Taylor Swift. Explore eras, compartilhe momentos e conecte-se com swifties do mundo inteiro.</p>
+                    <div class="hero-cta">
+                        <button onclick="goTo('albuns')" class="btn-primary">Explorar Eras</button>
+                        <button onclick="goTo('mural')" class="btn-secondary">Ver Mural</button>
+                    </div>
+                    <div class="hero-stats">
+                        <div class="stat"><span class="stat-num">10</span><span class="stat-label">Eras</span></div>
+                        <div class="stat-div">|</div>
+                        <div class="stat"><span class="stat-num">200+</span><span class="stat-label">Músicas</span></div>
+                        <div class="stat-div">|</div>
+                        <div class="stat"><span class="stat-num">∞</span><span class="stat-label">Swifties</span></div>
+                    </div>
+                </div>
+                <div class="hero-visual">
+                    <div class="vinyl-record">
+                        <div class="vinyl-inner">
+                            <img src="LOGO.jpg" alt="Taylor" onerror="this.style.background='linear-gradient(45deg, #572983, #d4af37)'" />
+                        </div>
+                    </div>
+                    <div class="floating-notes">
+                        <span class="note n1">♪</span>
+                        <span class="note n2">♫</span>
+                        <span class="note n3">♩</span>
+                        <span class="note n4">♬</span>
+                        <span class="note n5">✦</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- FOTOS MOMENTO ICÔNICO -->
+            <div class="section-header">
+                <h2 class="section-title">Momentos Icônicos</h2>
+                <div class="title-line"></div>
+            </div>
+            <section class="galeria-fotos-home">
+                <div class="foto-item"><img src="foto_4.jpg" alt="Taylor 1" onerror="this.src='https://via.placeholder.com/400x400/572983/gold?text=Taylor'"></div>
+                <div class="foto-item"><img src="foto_2.jpg" alt="Taylor 2" onerror="this.src='https://via.placeholder.com/400x400/1d2a44/gold?text=Taylor'"></div>
+                <div class="foto-item"><img src="foto_3.jpg" alt="Taylor 3" onerror="this.src='https://via.placeholder.com/400x400/8b0000/gold?text=Taylor'"></div>
+            </section>
+
+            <!-- ERA ATUAL / QUIZ -->
+            <div class="section-header" style="margin-top:60px">
+                <h2 class="section-title">Qual é a sua Era?</h2>
+                <div class="title-line"></div>
+            </div>
+            <div class="era-quiz-widget">
+                <div class="quiz-inner">
+                    <p class="quiz-desc">Descubra qual era da Taylor combina com o seu humor de hoje!</p>
+                    <div class="quiz-moods">
+                        <button class="mood-btn" onclick="revealEra('lover')">💕 Apaixonada</button>
+                        <button class="mood-btn" onclick="revealEra('midnights')">🌙 Introspectiva</button>
+                        <button class="mood-btn" onclick="revealEra('reputation')">🐍 Poderosa</button>
+                        <button class="mood-btn" onclick="revealEra('folklore')">🌲 Nostálgica</button>
+                        <button class="mood-btn" onclick="revealEra('1989')">☁️ Radiante</button>
+                        <button class="mood-btn" onclick="revealEra('red')">❤️ Intensa</button>
+                    </div>
+                    <div id="era-result" class="era-result hidden"></div>
+                </div>
+            </div>
+
+            <!-- ÚLTIMAS DO MURAL -->
+            <div class="section-header" style="margin-top:60px">
+                <h2 class="section-title">Últimas do Mural</h2>
+                <div class="title-line"></div>
+            </div>
+            <div id="home-opinioes" class="home-feed"></div>
+            <div style="text-align:center; margin: 20px 0 60px">
+                <button onclick="goTo('mural')" class="btn-secondary">Ver todo o Mural →</button>
+            </div>
+        </section>
+
+        <!-- ===== ERAS / ÁLBUNS ===== -->
+        <section id="albuns" class="page-section">
+            <div class="section-header">
+                <h2 class="section-title">As Eras de Taylor Swift</h2>
+                <div class="title-line"></div>
+                <p class="section-desc">Uma jornada por cada capítulo da maior artista do mundo</p>
+            </div>
+
+            <div class="eras-filter">
+                <button class="filter-btn active" onclick="filterEra('all', this)">Todas as Eras</button>
+                <button class="filter-btn" onclick="filterEra('pop', this)">Pop</button>
+                <button class="filter-btn" onclick="filterEra('country', this)">Country</button>
+                <button class="filter-btn" onclick="filterEra('indie', this)">Indie/Folk</button>
+            </div>
+
+            <div class="eras-grid" id="eras-grid">
+
+                <div class="era-card" data-genre="country" style="--era-color: #ebb753; --era-dark: #8a6200;" onclick="openEraModal('fearless')">
+                    <div class="era-year">2008</div>
+                    <div class="era-cover">
+                        <img src="Fearless_(Taylor's_Version).png" alt="Fearless" onerror="this.src='https://via.placeholder.com/300x300/ebb753/fff?text=Fearless'">
+                        <div class="era-overlay">
+                            <span class="era-play">▶ Explorar</span>
+                        </div>
+                    </div>
+                    <div class="era-info">
+                        <h3>Fearless</h3>
+                        <p>A era dourada do country pop. Coragem de ser jovem e apaixonada.</p>
+                        <div class="era-tags">
+                            <span class="tag">Country</span>
+                            <span class="tag">Pop</span>
+                            <span class="tag">13 faixas</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="era-card" data-genre="country" style="--era-color: #a52a2a; --era-dark: #5a0000;" onclick="openEraModal('speaknow')">
+                    <div class="era-year">2010</div>
+                    <div class="era-cover">
+                        <img src="speak-now.jpeg" alt="Speak Now" onerror="this.src='https://via.placeholder.com/300x300/a52a2a/fff?text=Speak+Now'">
+                        <div class="era-overlay"><span class="era-play">▶ Explorar</span></div>
+                    </div>
+                    <div class="era-info">
+                        <h3>Speak Now</h3>
+                        <p>Escrita inteiramente por Taylor. Encantamento, magia e confissões.</p>
+                        <div class="era-tags">
+                            <span class="tag">Country</span>
+                            <span class="tag">14 faixas</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="era-card" data-genre="country pop" style="--era-color: #8b0000; --era-dark: #3d0000;" onclick="openEraModal('red')">
+                    <div class="era-year">2012</div>
+                    <div class="era-cover">
+                        <img src="red.jpg" alt="Red" onerror="this.src='https://via.placeholder.com/300x300/8b0000/fff?text=Red'">
+                        <div class="era-overlay"><span class="era-play">▶ Explorar</span></div>
+                    </div>
+                    <div class="era-info">
+                        <h3>Red</h3>
+                        <p>Amor que queima como fogo. A era mais emocional e diversa.</p>
+                        <div class="era-tags">
+                            <span class="tag">Pop</span>
+                            <span class="tag">Country</span>
+                            <span class="tag">16 faixas</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="era-card" data-genre="pop" style="--era-color: #b1d4e0; --era-dark: #2a6d85;" onclick="openEraModal('1989')">
+                    <div class="era-year">2014</div>
+                    <div class="era-cover">
+                        <img src="1989.jpeg" alt="1989" onerror="this.src='https://via.placeholder.com/300x300/b1d4e0/333?text=1989'">
+                        <div class="era-overlay"><span class="era-play">▶ Explorar</span></div>
+                    </div>
+                    <div class="era-info">
+                        <h3>1989</h3>
+                        <p>O renascimento no pop sintetizado. New York, polaroids e hits eternos.</p>
+                        <div class="era-tags">
+                            <span class="tag">Synth-Pop</span>
+                            <span class="tag">13 faixas</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="era-card" data-genre="pop" style="--era-color: #1a1a1a; --era-dark: #000;" onclick="openEraModal('reputation')">
+                    <div class="era-year">2017</div>
+                    <div class="era-cover">
+                        <img src="Reputation_-_Taylor_Swift.png" alt="Reputation" onerror="this.src='https://via.placeholder.com/300x300/1a1a1a/fff?text=Reputation'">
+                        <div class="era-overlay"><span class="era-play">▶ Explorar</span></div>
+                    </div>
+                    <div class="era-info">
+                        <h3>Reputation</h3>
+                        <p>A reinvenção sombria. Taylor voltou — e desta vez, com garras.</p>
+                        <div class="era-tags">
+                            <span class="tag">Pop</span>
+                            <span class="tag">Trap</span>
+                            <span class="tag">15 faixas</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="era-card" data-genre="pop" style="--era-color: #ff9fb5; --era-dark: #b5004a;" onclick="openEraModal('lover')">
+                    <div class="era-year">2019</div>
+                    <div class="era-cover">
+                        <img src="lover.jpg" alt="Lover" onerror="this.src='https://via.placeholder.com/300x300/ff9fb5/fff?text=Lover'">
+                        <div class="era-overlay"><span class="era-play">▶ Explorar</span></div>
+                    </div>
+                    <div class="era-info">
+                        <h3>Lover</h3>
+                        <p>Pastel, doce e cheio de arco-íris. Amor em sua forma mais pura.</p>
+                        <div class="era-tags">
+                            <span class="tag">Pop</span>
+                            <span class="tag">18 faixas</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="era-card" data-genre="indie" style="--era-color: #cfcfcf; --era-dark: #555;" onclick="openEraModal('folklore')">
+                    <div class="era-year">2020</div>
+                    <div class="era-cover">
+                        <img src="Folkclore.avif" alt="Folklore" onerror="this.src='https://via.placeholder.com/300x300/cfcfcf/333?text=Folklore'">
+                        <div class="era-overlay"><span class="era-play">▶ Explorar</span></div>
+                    </div>
+                    <div class="era-info">
+                        <h3>Folklore</h3>
+                        <p>Indie folk em tons cinzas. Histórias imaginárias e sentimentos reais.</p>
+                        <div class="era-tags">
+                            <span class="tag">Indie Folk</span>
+                            <span class="tag">16 faixas</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="era-card" data-genre="indie" style="--era-color: #704214; --era-dark: #3a1a00;" onclick="openEraModal('evermore')">
+                    <div class="era-year">2020</div>
+                    <div class="era-cover">
+                        <img src="evermore.avif" alt="Evermore" onerror="this.src='https://via.placeholder.com/300x300/704214/fff?text=Evermore'">
+                        <div class="era-overlay"><span class="era-play">▶ Explorar</span></div>
+                    </div>
+                    <div class="era-info">
+                        <h3>Evermore</h3>
+                        <p>A antologia poética. Outono perpétuo de histórias e personagens.</p>
+                        <div class="era-tags">
+                            <span class="tag">Indie Folk</span>
+                            <span class="tag">15 faixas</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="era-card" data-genre="pop" style="--era-color: #1d2a44; --era-dark: #050a14;" onclick="openEraModal('midnights')">
+                    <div class="era-year">2022</div>
+                    <div class="era-cover">
+                        <img src="midnights.jpg" alt="Midnights" onerror="this.src='https://via.placeholder.com/300x300/1d2a44/d4af37?text=Midnights'">
+                        <div class="era-overlay"><span class="era-play">▶ Explorar</span></div>
+                    </div>
+                    <div class="era-info">
+                        <h3>Midnights</h3>
+                        <p>13 noites de insônia e confissões. O álbum mais íntimo de Taylor.</p>
+                        <div class="era-tags">
+                            <span class="tag">Synth-Pop</span>
+                            <span class="tag">13 faixas</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="era-card" data-genre="pop" style="--era-color: #4a4a4a; --era-dark: #1a1a1a;" onclick="openEraModal('ttpd')">
+                    <div class="era-year">2024</div>
+                    <div class="era-cover">
+                        <img src="TTDP.jpeg" alt="TTPD" onerror="this.src='https://via.placeholder.com/300x300/4a4a4a/fff?text=TTPD'">
+                        <div class="era-overlay"><span class="era-play">▶ Explorar</span></div>
+                    </div>
+                    <div class="era-info">
+                        <h3>TTPD</h3>
+                        <p>The Tortured Poets Department. Dor transformada em arte máxima.</p>
+                        <div class="era-tags">
+                            <span class="tag">Alternative Pop</span>
+                            <span class="tag">31 faixas</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ===== GALERIA ===== -->
+        <section id="fotos" class="page-section">
+            <div class="section-header">
+                <h2 class="section-title">Galeria de Fotos</h2>
+                <div class="title-line"></div>
+                <p class="section-desc">Os momentos mais marcantes da carreira de Taylor Swift</p>
+            </div>
+
+            <div class="gallery-filter">
+                <button class="gal-btn active" onclick="filterGallery('all', this)">Tudo</button>
+                <button class="gal-btn" onclick="filterGallery('shows', this)">Shows</button>
+                <button class="gal-btn" onclick="filterGallery('premieres', this)">Premiações</button>
+                <button class="gal-btn" onclick="filterGallery('vida', this)">Bastidores</button>
+            </div>
+
+            <div class="gallery-masonry" id="gallery-masonry">
+                <!-- Fotos do site original -->
+                <div class="gal-item" data-cat="shows" onclick="openLightbox(this)">
+                    <img src="foto_4.jpg" alt="Taylor Swift" onerror="this.src='https://via.placeholder.com/400x500/572983/d4af37?text=✦'">
+                    <div class="gal-overlay"><span>✦ The Eras Tour</span></div>
+                </div>
+                <div class="gal-item tall" data-cat="premieres" onclick="openLightbox(this)">
+                    <img src="foto_2.jpg" alt="Taylor Swift" onerror="this.src='https://via.placeholder.com/400x600/1d2a44/d4af37?text=✦'">
+                    <div class="gal-overlay"><span>✦ Grammy Awards</span></div>
+                </div>
+                <div class="gal-item" data-cat="vida" onclick="openLightbox(this)">
+                    <img src="foto_3.jpg" alt="Taylor Swift" onerror="this.src='https://via.placeholder.com/400x400/8b0000/d4af37?text=✦'">
+                    <div class="gal-overlay"><span>✦ Bastidores</span></div>
+                </div>
+                <!-- Fotos dos álbuns usadas como galeria -->
+                <div class="gal-item wide" data-cat="shows" onclick="openLightbox(this)">
+                    <img src="lover.jpg" alt="Lover Era" onerror="this.src='https://via.placeholder.com/600x400/ff9fb5/fff?text=Lover'">
+                    <div class="gal-overlay"><span>✦ Lover Era</span></div>
+                </div>
+                <div class="gal-item" data-cat="premieres" onclick="openLightbox(this)">
+                    <img src="midnights.jpg" alt="Midnights" onerror="this.src='https://via.placeholder.com/400x400/1d2a44/d4af37?text=Midnights'">
+                    <div class="gal-overlay"><span>✦ Midnights</span></div>
+                </div>
+                <div class="gal-item" data-cat="shows" onclick="openLightbox(this)">
+                    <img src="1989.jpeg" alt="1989" onerror="this.src='https://via.placeholder.com/400x400/b1d4e0/333?text=1989'">
+                    <div class="gal-overlay"><span>✦ 1989 Era</span></div>
+                </div>
+                <div class="gal-item tall" data-cat="vida" onclick="openLightbox(this)">
+                    <img src="Reputation_-_Taylor_Swift.png" alt="Reputation" onerror="this.src='https://via.placeholder.com/400x600/1a1a1a/fff?text=Rep'">
+                    <div class="gal-overlay"><span>✦ Reputation Era</span></div>
+                </div>
+                <div class="gal-item" data-cat="premieres" onclick="openLightbox(this)">
+                    <img src="Folkclore.avif" alt="Folklore" onerror="this.src='https://via.placeholder.com/400x400/cfcfcf/333?text=Folklore'">
+                    <div class="gal-overlay"><span>✦ Folklore</span></div>
+                </div>
+                <div class="gal-item wide" data-cat="shows" onclick="openLightbox(this)">
+                    <img src="evermore.avif" alt="Evermore" onerror="this.src='https://via.placeholder.com/600x400/704214/fff?text=Evermore'">
+                    <div class="gal-overlay"><span>✦ Evermore</span></div>
+                </div>
+                <div class="gal-item" data-cat="vida" onclick="openLightbox(this)">
+                    <img src="red.jpg" alt="Red" onerror="this.src='https://via.placeholder.com/400x400/8b0000/fff?text=Red'">
+                    <div class="gal-overlay"><span>✦ Red Era</span></div>
+                </div>
+                <div class="gal-item" data-cat="premieres" onclick="openLightbox(this)">
+                    <img src="TTDP.jpeg" alt="TTPD" onerror="this.src='https://via.placeholder.com/400x400/4a4a4a/fff?text=TTPD'">
+                    <div class="gal-overlay"><span>✦ TTPD Era</span></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== MURAL ===== -->
+        <section id="mural" class="page-section">
+            <div class="section-header">
+                <h2 class="section-title">Mural das Swifties</h2>
+                <div class="title-line"></div>
+                <p class="section-desc">Compartilhe seus pensamentos com a comunidade</p>
+            </div>
+
+            <div class="mural-layout">
+                <!-- FORMULÁRIO -->
+                <div class="post-form-card">
+                    <div class="post-form-header">
+                        <div class="avatar-placeholder">✦</div>
+                        <div>
+                            <p class="form-title">Escrever no Mural</p>
+                            <p class="form-sub">Compartilhe sua Era favorita</p>
+                        </div>
+                    </div>
+                    <input type="text" id="nome-usuario" placeholder="Seu nome de swiftie..." class="input-field">
+                    <select id="era-usuario" class="input-field select-field">
+                        <option value="">🌟 Qual sua Era atual?</option>
+                        <option value="Fearless Era 🌟">Fearless Era 🌟</option>
+                        <option value="Speak Now Era 🪄">Speak Now Era 🪄</option>
+                        <option value="Red Era ❤️">Red Era ❤️</option>
+                        <option value="1989 Era ☁️">1989 Era ☁️</option>
+                        <option value="Reputation Era 🐍">Reputation Era 🐍</option>
+                        <option value="Lover Era 💕">Lover Era 💕</option>
+                        <option value="Folklore Era 🌲">Folklore Era 🌲</option>
+                        <option value="Evermore Era 🍂">Evermore Era 🍂</option>
+                        <option value="Midnights Era 🌙">Midnights Era 🌙</option>
+                        <option value="TTPD Era 🖊️">TTPD Era 🖊️</option>
+                    </select>
+                    <textarea id="texto-opiniao" placeholder="O que a Taylor significa para você? Qual música te salvou?" rows="4" class="input-field textarea-field"></textarea>
+                    <div class="emoji-picker">
+                        <span onclick="addEmoji('💕')">💕</span>
+                        <span onclick="addEmoji('🌙')">🌙</span>
+                        <span onclick="addEmoji('🐍')">🐍</span>
+                        <span onclick="addEmoji('🌲')">🌲</span>
+                        <span onclick="addEmoji('☁️')">☁️</span>
+                        <span onclick="addEmoji('✨')">✨</span>
+                        <span onclick="addEmoji('🎸')">🎸</span>
+                        <span onclick="addEmoji('🎤')">🎤</span>
+                    </div>
+                    <button id="btn-publicar" class="btn-primary btn-full" onclick="publicarOpiniao()">
+                        ✦ Publicar no Mural
+                    </button>
+                </div>
+
+                <!-- FEED DO MURAL -->
+                <div class="mural-feed" id="lista-opinioes">
+                    <div class="loading-posts">
+                        <div class="loading-spinner"></div>
+                        <p>Carregando posts das swifties...</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== COMUNIDADE ===== -->
+        <section id="comunidade" class="page-section">
+            <div class="section-header">
+                <h2 class="section-title">Comunidade Swiftie</h2>
+                <div class="title-line"></div>
+                <p class="section-desc">Explore, interaja e mergulhe na cultura Taylor Swift</p>
+            </div>
+
+            <div class="community-grid">
+
+                <!-- TRIVIA -->
+                <div class="community-card card-trivia">
+                    <div class="card-icon">🎯</div>
+                    <h3>Taylor Trivia</h3>
+                    <p>Teste seus conhecimentos sobre a discografia completa!</p>
+                    <div id="trivia-container">
+                        <div class="trivia-question" id="trivia-q"></div>
+                        <div class="trivia-options" id="trivia-opts"></div>
+                        <div class="trivia-result" id="trivia-result"></div>
+                    </div>
+                    <button class="btn-card" onclick="loadTrivia()">Nova Pergunta</button>
+                </div>
+
+                <!-- CITAÇÕES -->
+                <div class="community-card card-quotes">
+                    <div class="card-icon">💬</div>
+                    <h3>Frases Icônicas</h3>
+                    <div class="quote-display" id="quote-display">
+                        <p class="quote-text">"Long story short, I survived."</p>
+                        <p class="quote-era">— Long Story Short, Evermore</p>
+                    </div>
+                    <button class="btn-card" onclick="randomQuote()">Nova Frase</button>
+                </div>
+
+                <!-- PLAYLIST ERA -->
+                <div class="community-card card-playlist">
+                    <div class="card-icon">🎵</div>
+                    <h3>Playlist por Era</h3>
+                    <p>Clique em uma Era para ver as faixas mais amadas</p>
+                    <div class="era-playlist-selector">
+                        <select id="playlist-era-select" class="input-field" onchange="showPlaylist()">
+                            <option value="">Escolha uma Era...</option>
+                            <option value="fearless">Fearless</option>
+                            <option value="red">Red</option>
+                            <option value="1989">1989</option>
+                            <option value="reputation">Reputation</option>
+                            <option value="lover">Lover</option>
+                            <option value="folklore">Folklore</option>
+                            <option value="midnights">Midnights</option>
+                            <option value="ttpd">TTPD</option>
+                        </select>
+                    </div>
+                    <div id="playlist-display" class="playlist-display"></div>
+                </div>
+
+                <!-- CONTADOR ERAS TOUR -->
+                <div class="community-card card-stats">
+                    <div class="card-icon">🌍</div>
+                    <h3>Swiftie Stats</h3>
+                    <div class="stats-grid-community">
+                        <div class="stat-c"><span class="stat-n">11</span><span class="stat-l">Grammy Awards</span></div>
+                        <div class="stat-c"><span class="stat-n">200M+</span><span class="stat-l">Álbuns vendidos</span></div>
+                        <div class="stat-c"><span class="stat-n">#1</span><span class="stat-l">Artista do Spotify</span></div>
+                        <div class="stat-c"><span class="stat-n">152</span><span class="stat-l">Shows Eras Tour</span></div>
+                    </div>
+                </div>
+
+                <!-- FAIXA FAVORITA -->
+                <div class="community-card card-vote">
+                    <div class="card-icon">⭐</div>
+                    <h3>Música do Dia</h3>
+                    <div id="song-of-day" class="song-of-day">
+                        <div class="sod-content">
+                            <div class="sod-spinning">♫</div>
+                            <p class="sod-title" id="sod-title">All Too Well (10 Min)</p>
+                            <p class="sod-album" id="sod-album">Red (Taylor's Version)</p>
+                        </div>
+                    </div>
+                    <button class="btn-card" onclick="nextSong()">Próxima Música ♪</button>
+                </div>
+
+                <!-- ERA WHEEL -->
+                <div class="community-card card-wheel">
+                    <div class="card-icon">🎡</div>
+                    <h3>Era Aleatória</h3>
+                    <p>Clique para descobrir qual era você deve revisitar hoje!</p>
+                    <div class="wheel-container" id="wheel-container" onclick="spinWheel()">
+                        <div class="wheel-text" id="wheel-text">Girar!</div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-inner">
+            <div class="footer-logo">
+                <span class="logo-text-lg">TSN</span>
+                <p>The Swifties Network</p>
+            </div>
+            <div class="footer-links">
+                <a href="#home" onclick="goTo('home')">Home</a>
+                <a href="#albuns" onclick="goTo('albuns')">Eras</a>
+                <a href="#fotos" onclick="goTo('fotos')">Galeria</a>
+                <a href="#mural" onclick="goTo('mural')">Mural</a>
+            </div>
+            <div class="footer-note">
+                <p>Feito com 💕 por swifties, para swifties</p>
+                <p class="footer-small">Fan site não oficial • Not affiliated with Taylor Swift</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- GIF FLUTUANTE -->
+    <img src="taylor-swift-nyu.gif" alt="Taylor Swift NYU" class="gif-footer-style">
+
+    <!-- AUDIO PLAYER BAR -->
+    <div class="audio-bar" id="audio-bar">
+        <div class="audio-bar-inner">
+            <div class="audio-info">
+                <span class="audio-note">♫</span>
+                <div>
+                    <p class="audio-track">Opalite</p>
+                    <p class="audio-artist">Taylor Swift</p>
+                </div>
+            </div>
+            <div class="audio-controls">
+                <button onclick="toggleAudio()" id="play-pause-btn">⏸</button>
+                <div class="audio-progress">
+                    <div class="audio-progress-bar" id="audio-progress-bar"></div>
+                </div>
+                <input type="range" id="volume-slider" min="0" max="1" step="0.1" value="0.5" onchange="setVolume(this.value)" class="volume-slider">
+            </div>
+        </div>
+    </div>
+
+    <!-- LIGHTBOX -->
+    <div class="lightbox" id="lightbox" onclick="closeLightbox()">
+        <button class="lightbox-close" onclick="closeLightbox()">✕</button>
+        <img id="lightbox-img" src="" alt="">
+        <p id="lightbox-caption"></p>
+    </div>
+
+    <!-- ERA MODAL -->
+    <div class="era-modal" id="era-modal" onclick="closeEraModal(event)">
+        <div class="era-modal-inner" id="era-modal-inner"></div>
+    </div>
+
+    <!-- NOTIFICAÇÃO TOAST -->
+    <div class="toast" id="toast"></div>
+
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
+        import { getDatabase, ref, push, onValue, update } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-database.js";
+
+        const firebaseConfig = {
+            apiKey: "AIzaSyDKoiWgAX1wGMxfTLFczb3Ma-FxA2s5fJU",
+            authDomain: "taylor-fans-7d55c.firebaseapp.com",
+            databaseURL: "https://taylor-fans-7d55c-default-rtdb.firebaseio.com/",
+            projectId: "taylor-fans-7d55c",
+            storageBucket: "taylor-fans-7d55c.appspot.com",
+            messagingSenderId: "816234241439",
+            appId: "1:816234241439:web:795d50073e97fcb59b31aa"
+        };
+
+        const app = initializeApp(firebaseConfig);
+        const db = getDatabase(app);
+        const opinioesRef = ref(db, 'opinioes');
+
+        // Publicar opinião
+        window.publicarOpiniao = function() {
+            const nome = document.getElementById('nome-usuario').value.trim();
+            const texto = document.getElementById('texto-opiniao').value.trim();
+            const era = document.getElementById('era-usuario').value;
+
+            if (!nome || !texto) {
+                showToast('Preencha seu nome e mensagem! 💕');
+                return;
+            }
+
+            push(opinioesRef, { nome, texto, era, data: Date.now(), likes: 0 });
+            document.getElementById('nome-usuario').value = '';
+            document.getElementById('texto-opiniao').value = '';
+            document.getElementById('texto-opiniao').value = '';
+            document.getElementById('era-usuario').value = '';
+            showToast('✦ Post publicado com sucesso!');
+        };
+
+        // Escutar opiniões em tempo real
+        onValue(opinioesRef, (snapshot) => {
+            const lista = document.getElementById('lista-opinioes');
+            const homeFeed = document.getElementById('home-opinioes');
+            const data = snapshot.val();
+
+            if (!data) {
+                lista.innerHTML = '<p style="text-align:center;color:#999;padding:40px">Seja o primeiro a postar! 💕</p>';
+                if(homeFeed) homeFeed.innerHTML = '<p style="text-align:center;color:#999;padding:20px">Nenhum post ainda.</p>';
+                return;
+            }
+
+            const posts = Object.entries(data).sort((a, b) => b[1].data - a[1].data);
+
+            lista.innerHTML = posts.map(([key, op]) => createPostHTML(key, op)).join('');
+            if(homeFeed) {
+                const recent = posts.slice(0, 3);
+                homeFeed.innerHTML = recent.map(([key, op]) => createPostHTMLSmall(key, op)).join('');
+            }
+
+            // Like buttons
+            lista.querySelectorAll('.like-btn').forEach(btn => {
+                btn.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    const key = btn.dataset.key;
+                    const currentLikes = parseInt(btn.dataset.likes) || 0;
+                    update(ref(db, 'opinioes/' + key), { likes: currentLikes + 1 });
+                    showToast('💕 Você curtiu!');
+                });
+            });
+        });
+
+        function createPostHTML(key, op) {
+            const date = new Date(op.data).toLocaleDateString('pt-BR');
+            const eraClass = getEraClass(op.era);
+            return `
+                <div class="post-card ${eraClass}" data-key="${key}">
+                    <div class="post-header">
+                        <div class="post-avatar">${op.nome ? op.nome.charAt(0).toUpperCase() : '✦'}</div>
+                        <div class="post-meta">
+                            <strong class="post-name">${op.nome || 'Swiftie Anônima'}</strong>
+                            ${op.era ? `<span class="post-era-tag">${op.era}</span>` : ''}
+                        </div>
+                        <span class="post-date">${date}</span>
+                    </div>
+                    <p class="post-text">${op.texto}</p>
+                    <div class="post-actions">
+                        <button class="like-btn" data-key="${key}" data-likes="${op.likes || 0}">
+                            💕 ${op.likes || 0}
+                        </button>
+                        <span class="post-share">✦ Swiftie</span>
+                    </div>
+                </div>
+            `;
+        }
+
+        function createPostHTMLSmall(key, op) {
+            return `
+                <div class="post-card-mini">
+                    <div class="post-avatar-mini">${op.nome ? op.nome.charAt(0).toUpperCase() : '✦'}</div>
+                    <div>
+                        <strong>${op.nome || 'Swiftie'}</strong>
+                        ${op.era ? `<span class="post-era-mini">${op.era}</span>` : ''}
+                        <p>${op.texto.substring(0, 100)}${op.texto.length > 100 ? '...' : ''}</p>
+                    </div>
+                </div>
+            `;
+        }
+
+        function getEraClass(era) {
+            if (!era) return '';
+            if (era.includes('Lover')) return 'era-post-lover';
+            if (era.includes('Midnights')) return 'era-post-midnights';
+            if (era.includes('Reputation')) return 'era-post-rep';
+            if (era.includes('Folklore') || era.includes('Evermore')) return 'era-post-folk';
+            if (era.includes('Red')) return 'era-post-red';
+            if (era.includes('1989')) return 'era-post-1989';
+            if (era.includes('TTPD')) return 'era-post-ttpd';
+            return '';
+        }
+    </script>
+
+    <script src="app.js"></script>
+</body>
+</html>
