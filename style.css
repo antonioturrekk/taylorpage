@@ -2385,7 +2385,23 @@ footer {
 }
 
 /* --- ENHANCED AUDIO BAR --- */
+.gif-footer-style {
+    position: fixed;
+    bottom: 100px;
+    right: 20px;
+    width: 120px;
+    z-index: 8000;
+    pointer-events: none;
+    border-radius: 12px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+}
+
 .audio-bar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: 9000;
     height: 80px;
     background: rgba(13, 13, 20, 0.95);
     border-top: 1px solid var(--border);
